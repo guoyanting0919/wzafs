@@ -1,0 +1,688 @@
+$color1: rgb(152, 203, 0);
+$color2: rgb(216, 216, 216);
+$color3: rgb(182, 182, 182);
+
+$xs: 375px;
+$sm: 575.98px;
+$md: 1200px;
+$lg: 991.98px;
+$xl: 1200px;
+
+@mixin rwd($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+* {
+  // position: relative ;
+}
+
+body {
+  font-family: "PingFang TC", "LiHei Pro", "Microsoft JhengHei", "微軟正黑體",
+    "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Helvetica, Arial,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+i,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.fa {
+  margin-right: 0.5rem;
+}
+
+.red {
+  color: #f00;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft JhengHei";
+  background: url("https://a001.wzu.edu.tw/assets/page/images/bg.jpg") top
+    center no-repeat;
+  background-position: 0px 80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  height: 100%;
+  position: relative;
+}
+
+.Loading {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .LoadingIcon {
+    font-size: 50px;
+    color: #fff;
+  }
+}
+
+.el-dialog {
+  @include rwd($sm) {
+    width: 80%;
+  }
+}
+
+.index {
+  .indexImg {
+    width: 100%;
+
+    @include rwd($sm) {
+      display: none;
+    }
+  }
+
+  .carouselItem {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .carouselItemImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .el-input {
+      width: 200px;
+    }
+  }
+
+  .searchBarBox {
+    @include rwd($sm) {
+      display: none;
+    }
+  }
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .el-input {
+    width: 200px;
+  }
+}
+
+.login {
+  width: 600px;
+  box-sizing: border-box;
+  padding: 36px;
+  background-color: #f9f9f9;
+
+  @include rwd($sm) {
+    width: 100%;
+  }
+}
+
+.SignUp {
+  box-sizing: border-box;
+  padding: 36px;
+  background-color: #f9f9f9;
+
+  @include rwd($sm) {
+    width: 100%;
+  }
+
+  .el-form {
+    width: 60%;
+
+    @include rwd($sm) {
+      width: 100%;
+    }
+  }
+}
+
+.page {
+  display: flex;
+  padding: 20px;
+  justify-content: flex-end;
+  align-items: center;
+
+  .pageD {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+  }
+
+  .pageDonc {
+    border-color: #b6b6b6;
+    background-color: #b6b6b6;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transform: scale(1.2, 1.2);
+  }
+
+  .pageMax {
+    display: flex;
+    align-items: center;
+  }
+
+  .pageMaxTitle {
+    margin: 0 10px;
+  }
+
+  select {
+    height: 30px;
+  }
+}
+
+.Top {
+  height: 80px;
+  background-color: $color1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .TopBox {
+    display: flex;
+    width: 1400px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include rwd($sm) {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+
+    .TopBoxLogoBox {
+      display: flex;
+      align-items: center;
+    }
+
+    .TopBoxLogo2 {
+      display: none;
+    }
+  }
+
+  .TopBoxLogo {
+    cursor: pointer;
+
+    @include rwd($sm) {
+      width: 200px;
+      height: 50px;
+    }
+  }
+
+  .TopBoxMenu {
+    display: flex;
+    align-items: center;
+
+    @include rwd($sm) {
+      display: none;
+    }
+  }
+
+  .TopBoxMenuItem {
+    margin: 0 20px 0 0;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      border-width: 0 0 1px 0;
+      border-color: #fff;
+      border-style: solid;
+    }
+  }
+
+  .TopBoxIcon {
+    display: none;
+    color: #fff;
+    font-size: 40px;
+
+    @include rwd($sm) {
+      display: block;
+    }
+  }
+}
+
+.Floor {
+  height: 150px;
+
+  @include rwd($sm) {
+    font-size: 10px;
+  }
+
+  .FloorInfo {
+    min-height: 100px;
+    background-color: $color2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .FloorComp {
+    min-height: 50px;
+    background-color: $color3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .FloorCompBox {
+    text-align: center;
+  }
+}
+
+.content {
+  // width: 1400px;
+  // padding: 10px;
+  position: relative;
+  margin: 0 auto;
+  min-height: calc(100% - 80px - 150px);
+  box-sizing: border-box;
+  padding: 10px;
+
+  @include rwd($sm) {
+    width: 100%;
+    padding: 10px;
+  }
+
+  @include rwd($md) {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.LeftMenu {
+  width: 200px;
+  box-sizing: border-box;
+
+  @include rwd($sm) {
+    display: none;
+  }
+
+  .LeftMenuTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+  }
+
+  .LeftMenuItem {
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 0;
+
+    &:hover div {
+      color: #aa0;
+    }
+  }
+
+  .router-link-active .LeftMenuItem {
+    color: #aa0;
+  }
+}
+
+.LeftMenuMobile {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  z-index: 97;
+  top: 0;
+  left: 0;
+
+  @include rwd($sm) {
+    display: block;
+  }
+
+  @keyframes openA {
+    from {
+      left: -70%;
+    }
+
+    to {
+      left: 0px;
+    }
+  }
+
+  .LeftMenuMobileBox {
+    width: 70%;
+    height: 100%;
+    background-color: #333333;
+    color: #fff;
+    animation-name: openA;
+    animation-duration: 0.2s;
+    position: fixed;
+    left: -70%;
+    top: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .LeftMenuTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .LeftMenuItem {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    overflow: hidden;
+
+    div {
+      margin: 0 0 5px 0;
+    }
+
+    &:hover div {
+      color: #aa0;
+    }
+  }
+
+  .router-link-active .LeftMenuItem {
+    background-color: #eee;
+    color: #333;
+  }
+
+  .isOpen {
+  }
+}
+
+.Breadcrumb {
+  display: flex;
+  height: 21px;
+
+  .BreadcrumbItem {
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      border-width: 0 0 1px 0;
+      border-color: #000;
+      border-style: solid;
+    }
+  }
+
+  .BreadcrumbItemSeparate {
+    margin: 0 10px 0 10px;
+  }
+}
+
+.Title {
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 25px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-width: 0 0 0 5px;
+  border-color: #a99071;
+  border-style: solid;
+  color: #63a3e3;
+}
+
+.contentBox {
+  display: flex;
+}
+
+.buttonList {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 10px 0;
+}
+
+.elBoxbuttonList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 0 10px 0;
+
+  &__chooseFunc {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.elBoxbuttonListCheckbox {
+  padding: 0 0 20px 0;
+}
+
+.Member {
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+
+  @include rwd($sm) {
+    width: 100%;
+  }
+}
+
+.Activity {
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+
+  .el-tabs {
+    display: none;
+    margin: 25px 0 0 0;
+  }
+
+  .el-tabs__header {
+    margin: 0;
+  }
+
+  .el-tabs__item {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @include rwd($sm) {
+    width: 100%;
+
+    .el-tabs {
+      display: block;
+    }
+  }
+}
+
+.elInputWidth {
+  width: 200px;
+}
+
+.TableButtonList {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Detail {
+  .actSummary {
+    padding: 20px 0;
+    border-width: 0 0 2px 0;
+    border-color: #888;
+    border-style: solid;
+  }
+
+  .info {
+    padding: 20px 0;
+    border-width: 0 0 2px 0;
+    border-color: #888;
+    border-style: solid;
+    margin: 0 0 20px 0;
+  }
+
+  .infoItem {
+    display: flex;
+    padding: 8px 0;
+  }
+
+  .infoItemTitle {
+    width: 120px;
+  }
+
+  .ActImg {
+    width: 100%;
+  }
+}
+
+.AttachmentFiles {
+  .infoItem {
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 25px;
+      margin: 0 10px 0 0;
+    }
+
+    a {
+      color: #63a3e3;
+      text-decoration: underline;
+    }
+  }
+}
+
+.Traffic {
+  .TrafficBoxItem {
+    padding: 10px 0;
+    display: flex;
+  }
+
+  .TrafficBoxItemTag {
+    color: #409eff;
+    font-weight: bold;
+    margin: 0 10px;
+    border-width: 0 0 1px 0;
+    border-color: #fff;
+    border-style: solid;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #409eff;
+    }
+  }
+}
+
+.GoBack {
+  text-align: right;
+  cursor: pointer;
+
+  &:hover {
+    color: #aa0;
+  }
+}
+
+.CheckIn {
+  .CheckInBoxItem {
+    margin: 0 0 20px 0;
+    display: flex;
+
+    @include rwd($sm) {
+      justify-content: center;
+    }
+  }
+
+  .CheckInBoxItemLabel {
+    width: 100px;
+    font-weight: bold;
+    margin: 0 20px 0 0;
+  }
+
+  .CheckInBoxForm {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #000;
+  }
+
+  .CheckInBoxFormButtonList {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.Err404 {
+  text-align: center;
+  color: #888;
+}
+
+.formDataTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.agreeBook {
+  padding: 20px;
+
+  ul {
+    list-style: disc;
+  }
+}
