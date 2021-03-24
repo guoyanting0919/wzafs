@@ -1,22 +1,20 @@
 <template>
   <div class="Top" :style="{ 'background-color': data.backgroundColor }">
     <div class="TopBox">
-      <i
-        class="el-icon-s-unfold TopBoxIcon"
-        @click="$emit('getMenuSet', true)"
-      ></i>
+      <i class="el-icon-s-unfold TopBoxIcon" @click="$emit('getMenuSet', true)"></i>
       <router-link class="TopBoxLogoBox" :to="{ name: 'index' }">
-        <img
-          class="TopBoxLogo"
-          style="margin: 0 10px 0 0"
-          :src="data.logo ? data.logo : '@/assets/logo.png'"
-        />
+        <img class="TopBoxLogo" style="margin: 0 10px 0 0" :src="data.logo ? data.logo : '@/assets/logo.png'" />
         <img class="TopBoxLogo TopBoxLogo2" src="@/assets/enroll_title.png" />
       </router-link>
       <router-link :to="{ path: '/Member' }">
         <i class="el-icon-user-solid TopBoxIcon"></i>
       </router-link>
       <div class="TopBoxMenu">
+        <a href="https://a001.wzu.edu.tw/" target="_blank">
+          <div class="TopBoxMenuItem" :style="{ color: data.color }">
+            文藻首頁
+          </div>
+        </a>
         <a href="http://ma.wzu.edu.tw/bin/home.php" target="_blank">
           <div class="TopBoxMenuItem" :style="{ color: data.color }">
             舊版活動管理系統
@@ -40,12 +38,7 @@
         <router-link :to="{ name: 'login' }" v-if="!hasToken">
           <div class="TopBoxMenuItem" :style="{ color: data.color }">登入</div>
         </router-link>
-        <div
-          class="TopBoxMenuItem"
-          :style="{ color: data.color }"
-          @click="logout"
-          v-else
-        >
+        <div class="TopBoxMenuItem" :style="{ color: data.color }" @click="logout" v-else>
           登出
         </div>
       </div>

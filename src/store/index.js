@@ -22,7 +22,8 @@ export default new Vuex.Store({
       { Id: 5, title: "其他" },
     ],
     JoinType: ["主持人", "主講人", "參與人員", "講師"],
-    EventStatus: ["確認參加", "參與", "主辦", "缺席", "取消", "候補"],
+    // EventStatus: ["確認參加", "參與", "主辦", "缺席", "取消", "候補"],
+    EventStatus: ["已報名", "參加", "主辦", "取消"],
   },
   mutations: {
     memberData(state, data) {

@@ -70,7 +70,7 @@
             <el-button @click="showQRCode(scope.row)" v-if="scope.row.Status == 0 && scope.row.HasPwd">報到</el-button>
             <el-button @click="GetRegisterData(scope.row)">報名資料</el-button>
             <el-button type="primary" @click="showPreview(scope.row)" v-if="scope.row.UserRegisterNo">證書</el-button>
-            <el-button type="danger" @click="UpdateBatchMeeting('1', scope.row.Id)" v-if="!scope.row.UserRegisterNo && scope.row.Status != 4">取消</el-button>
+            <el-button type="danger" @click="UpdateBatchMeeting('1', scope.row.Id)" v-if="!scope.row.UserRegisterNo && scope.row.Status != 3">取消</el-button>
             <!--<el-button type="danger" @click="del(scope.row.Id)" v-if="!scope.row.UserRegisterNo&&scope.row.Status!=4">取消</el-button>-->
           </div>
         </template>
@@ -170,7 +170,7 @@ export default {
       let data = [x];
       let params = {
         uType,
-        uValue: 4,
+        uValue: 3,
         uService: "",
       };
       await vm.$api.UpdateBatchMeeting(params, data).then((res) => {
